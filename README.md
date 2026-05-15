@@ -38,8 +38,6 @@ No build step. No dependencies to install. Open `index.html` in a browser and it
 
 That's it. Any future `git push` to `main` redeploys automatically.
 
-### Optional: custom domain
-If you have a domain (e.g. `coolingcare.org`), add a file called `CNAME` containing only the domain (`coolingcare.org`), commit and push, then point your DNS at GitHub's Pages servers. Full instructions are in GitHub's docs under "Custom domains".
 
 ---
 
@@ -51,28 +49,7 @@ All copy lives directly in `index.html`. Open it in any text editor and edit the
 ### Colours and typography
 Open `styles.css` and edit the `:root` block at the very top. Every colour and font is declared there as a CSS variable. Change `--forest`, `--terracotta`, etc., and the change propagates through the whole design.
 
-### Replacing or updating the dataset
-The chart uses the real clinic-level dataset (n = 220 rural primary care facilities in the Dodoma Region, Tanzania). The data lives as a literal JavaScript array in `chart.js`:
-
-```js
-const DATA = [
-  { ndvi: 0.281, lst: 43.967 },
-  { ndvi: 0.265, lst: 46.833 },
-  // ... 218 more
-];
-```
-
-To swap in a different dataset (e.g. a second region, an updated acquisition date), open `chart.js` and replace the entire `DATA = [...]` block. The regression line, r value, axis range, and tooltip labels all recompute automatically from this array — no other changes required.
-
-### Chart styling
-Tooltip wording, axis labels, and the highlighted zones at the corners of the plot are all configured in `chart.js`. Search for the strings to find them; each is well-commented.
-
 ---
-
-## Notes on attribution
-
-- The note currently credits the Dodoma analysis as _"authors' analysis, 2026."_ Edit that placeholder in both `index.html` (figure caption) and the body paragraph above the chart when the final sender is decided.
-- MetaMeta is deliberately kept out of the body text per the brief. The Green Roads Toolkit is cited institutionally to ADB.
 
 ## Browser support
 
